@@ -3,7 +3,7 @@ const { Guilds, GuildMembers, GuildMessages, MessageContent} = GatewayIntentBits
 const { User, Message, GuildMember, ThreadMember } = Partials;
 
 const client = new Client({
-  intents: [Guilds, GuildMembers, GuildMessages, MessageContent],
+  intents: [Guilds, GuildMembers, GuildMessages, MessageContent, GatewayIntentBits.GuildPresences, GatewayIntentBits.GuildMessageReactions],
   partials: [User, Message, GuildMember, ThreadMember],
 });
 
@@ -17,6 +17,8 @@ client.subCommands = new Collection();
 client.events = new Collection();
 client.guildConfig = new Collection();
 client.buttons = new Collection();
+
+
 
 loadEvents(client);
 loadConfig(client);
